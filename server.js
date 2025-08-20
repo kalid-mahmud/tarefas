@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 
 // Importar as rotas
-const routes = require('./routes'); // O caminho foi corrigido!
+const routes = require('./backend/routes'); // Caminho corrigido!
 
 // Configurar o CORS para permitir requisições do seu frontend no Vercel
 app.use(cors({
