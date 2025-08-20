@@ -1,10 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const bodyParser = require('body-parser');
 
 // Importar as rotas
-const routes = require('./backend/routes'); // Caminho corrigido!
+const routes = require('./routes'); // O caminho foi corrigido!
 
 // Configurar o CORS para permitir requisições do seu frontend no Vercel
 app.use(cors({
@@ -13,8 +12,8 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-// Usar o body-parser para interpretar o corpo das requisições JSON
-app.use(bodyParser.json());
+// Usar o express para interpretar o corpo das requisições JSON
+app.use(express.json());
 
 // Usar as rotas definidas
 app.use('/api', routes);
