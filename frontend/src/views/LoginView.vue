@@ -32,14 +32,14 @@ const { setUser } = inject('authActions');
 
 const login = async () => {
   try {
-    const response = await axios.post('http://localhost:5000/api/login', {
+    const response = await axios.post('https://tarefas-1-ikjj.onrender.com', {
       username: username.value,
       password: password.value,
     });
     const token = response.data.token;
     localStorage.setItem('token', token);
 
-    const userResponse = await axios.get('http://localhost:5000/api/user', {
+    const userResponse = await axios.get('https://tarefas-1-ikjj.onrender.com', {
         headers: {
             Authorization: `Bearer ${token}`
         }
